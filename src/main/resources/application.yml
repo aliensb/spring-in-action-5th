@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: true
+
+  datasource:
+    url: jdbc:mysql://localhost/spring_in_action
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
