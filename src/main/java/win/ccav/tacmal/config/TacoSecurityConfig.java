@@ -28,6 +28,7 @@ public class TacoSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/design","/orders").hasRole("USER").
-                antMatchers("/", "/**","/register").permitAll();
+                antMatchers("/", "/**").permitAll()
+                .and().formLogin().loginPage("/login").defaultSuccessUrl("/design");
     }
 }
