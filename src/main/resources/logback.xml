@@ -26,6 +26,7 @@
             <!--<pattern>%d %contextName %msg%n</pattern>-->
             <!-- pattern模式 %d时间 %thread 线程名 %level行为级别 %logger logger名称 %method 方法名称 %message 调用方法的入参消息 -->
             <pattern>%-4d [%thread] %highlight%-5level %cyan%logger.%-10method - %message%n</pattern>
+            <!--<pattern>%date %level [%thread] %file:%line] %msg%n</pattern>-->
         </encoder>
     </appender>
 
@@ -86,18 +87,18 @@
 
     <!-- 重点来了，上边都是appender输出源。这里开始就是looger了 -->
     <!-- name意思是这个logger管的哪一片，像下面这个管的就是log/test包下的所有文件 level是只展示什么行为信息级别以上的，类似阈值过滤器 additivity表示是否再抛出事件，就是说如果有一个logger的name是log，如果这个属性是true，另一个logger就会在这个logger处理完后接着继续处理 -->
-    <logger name="ccav.tv" level="INFO" additivity="false">
-        <!-- 连接输出源，也就是上边那几个输出源 ，你可以随便选几个appender-->
-        <appender-ref ref="STDOUT"/>
-        <!--<appender-ref ref="ROLLINGFILE"/>-->
-        <!--<appender-ref ref="HTMLFILE"/>-->
-    </logger>
-    <!-- 这个logger详细到了类 -->
-    <logger name="ccav.tv.App" level="info" additivity="false">
-        <appender-ref ref="STDOUT"/>
-        <!--<appender-ref ref="ROLLINGFILE"/>-->
-        <!--<appender-ref ref="HTMLFILE"/>-->
-    </logger>
+    <!--<logger name="ccav.tv" level="INFO" additivity="false">-->
+        <!--&lt;!&ndash; 连接输出源，也就是上边那几个输出源 ，你可以随便选几个appender&ndash;&gt;-->
+        <!--<appender-ref ref="STDOUT"/>-->
+        <!--&lt;!&ndash;<appender-ref ref="ROLLINGFILE"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<appender-ref ref="HTMLFILE"/>&ndash;&gt;-->
+    <!--</logger>-->
+    <!--&lt;!&ndash; 这个logger详细到了类 &ndash;&gt;-->
+    <!--<logger name="ccav.tv.App" level="info" additivity="false">-->
+        <!--<appender-ref ref="STDOUT"/>-->
+        <!--&lt;!&ndash;<appender-ref ref="ROLLINGFILE"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<appender-ref ref="HTMLFILE"/>&ndash;&gt;-->
+    <!--</logger>-->
 
     <!-- Strictly speaking, the level attribute is not necessary since -->
     <!-- the level of the root level is set to DEBUG by default.       -->
